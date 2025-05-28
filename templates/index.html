@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% block title %}My Diary{% endblock %}
+
+{% block content %}
+<h1>My Diary Entries</h1>
+<a href="{{ url_for('create') }}" class="btn">Create New Card</a>
+
+<div class="cards-container">
+    {% for card in cards %}
+    <div class="card-preview">
+        <h3>{{ card.title }}</h3>
+        <p class="subtitle">{{ card.subtitle }}</p>
+        <p>{{ card.text[:100] }}{% if card.text|length > 100 %}...{% endif %}</p>
+        <a href="{{ url_for('card', id=card.id) }}" class="btn">Read More</a>
+    </div>
+    {% else %}
+    <p>No diary entries yet. <a href="{{ url_for('create') }}">Create your first card</a></p>
+    {% endfor %}
+</div>
+{% endblock %}

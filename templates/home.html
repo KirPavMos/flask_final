@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block title %}Home{% endblock %}
+
+{% block content %}
+<div class="hero">
+    <h1>Welcome to Your Personal Diary</h1>
+    <p>Record your thoughts, ideas, and memories securely</p>
+    {% if not current_user.is_authenticated %}
+        <div class="auth-buttons">
+            <a href="{{ url_for('login') }}" class="btn">Login</a>
+            <a href="{{ url_for('register') }}" class="btn">Register</a>
+        </div>
+    {% else %}
+        <a href="{{ url_for('index') }}" class="btn">Go to Your Diary</a>
+    {% endif %}
+</div>
+{% endblock %}
