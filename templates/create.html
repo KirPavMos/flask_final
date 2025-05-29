@@ -2,21 +2,21 @@
 {% block title %}Create Card{% endblock %}
 
 {% block content %}
-<h1>Create New Diary Entry</h1>
+<h1>Создай новую запись дневника</h1>
 <form method="POST" action="{{ url_for('form_create') }}">
     <div class="form-group">
-        <label for="title">Title</label>
+        <label for="title">Заголовок</label>
         <input type="text" id="title" name="title" required>
     </div>
     <div class="form-group">
-        <label for="subtitle">Subtitle</label>
+        <label for="subtitle">Подзаголовок</label>
         <input type="text" id="subtitle" name="subtitle">
     </div>
     <div class="form-group">
-        <label for="text">Content</label>
+        <label for="text">Содержание</label>
         <textarea id="text" name="text" rows="10" required></textarea>
     </div>
-    <button type="submit" class="btn">Create Card</button>
-    <a href="{{ url_for('index') }}" class="btn">Cancel</a>
+    <button type="submit" class="btn">Создать карточку</button>
+    <a href="{{ url_for('index') }}" class="btn">Отмена</a>
 </form>
 {% endblock %}

@@ -3,15 +3,15 @@
 
 {% block content %}
 <div class="hero">
-    <h1>Welcome to Your Personal Diary</h1>
-    <p>Record your thoughts, ideas, and memories securely</p>
+    <h1>Добро пожаловать в Ваш персональный дневник</h1>
+    <p>Фиксируйте свои мысли, идеи и воспоминания</p>
     {% if not current_user.is_authenticated %}
         <div class="auth-buttons">
-            <a href="{{ url_for('login') }}" class="btn">Login</a>
-            <a href="{{ url_for('register') }}" class="btn">Register</a>
+            <a href="{{ url_for('login') }}" class="btn">Войти</a>
+            <a href="{{ url_for('register') }}" class="btn">Регистрация</a>
         </div>
     {% else %}
-        <a href="{{ url_for('index') }}" class="btn">Go to Your Diary</a>
+        <a href="{{ url_for('index') }}" class="btn">Перейти в дневник</a>
     {% endif %}
 </div>
 {% endblock %}
